@@ -113,6 +113,15 @@ public class MainActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     String message =  "Success";
                     Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+                    
+                    
+                    imagesResponseList2 = response.body();
+
+                    for(int i = 0; i < imagesResponseList2.size(); i++) {
+                        imagesResponseList.add(imagesResponseList2.get(i));
+                    }
+                    customAdapter.notifyDataSetChanged();
+
 
 
 
